@@ -1,0 +1,35 @@
+Source: rust-termcolor
+Section: rust
+Priority: optional
+Build-Depends: debhelper (>= 12),
+ dh-cargo (>= 25),
+ cargo:native <!nocheck>,
+ rustc:native <!nocheck>,
+ libstd-rust-dev <!nocheck>,
+ librust-winapi-util-0.1+default-dev (>= 0.1.3-~~) <!nocheck>
+Maintainer: Debian Rust Maintainers <pkg-rust-maintainers@alioth-lists.debian.net>
+Uploaders:
+ Sylvestre Ledru <sylvestre@debian.org>
+Standards-Version: 4.5.1
+Vcs-Git: https://salsa.debian.org/rust-team/debcargo-conf.git [src/termcolor]
+Vcs-Browser: https://salsa.debian.org/rust-team/debcargo-conf/tree/master/src/termcolor
+Homepage: https://github.com/BurntSushi/termcolor
+Rules-Requires-Root: no
+
+Package: librust-termcolor-dev
+Architecture: any
+Multi-Arch: same
+Depends:
+ ${misc:Depends},
+ librust-winapi-util-0.1+default-dev (>= 0.1.3-~~)
+Provides:
+ librust-termcolor+default-dev (= ${binary:Version}),
+ librust-termcolor-1-dev (= ${binary:Version}),
+ librust-termcolor-1+default-dev (= ${binary:Version}),
+ librust-termcolor-1.1-dev (= ${binary:Version}),
+ librust-termcolor-1.1+default-dev (= ${binary:Version}),
+ librust-termcolor-1.1.2-dev (= ${binary:Version}),
+ librust-termcolor-1.1.2+default-dev (= ${binary:Version})
+Description: Simple cross platform library for writing colored text to a terminal - Rust source code
+ This package contains the source for the Rust termcolor crate, packaged by
+ debcargo for use with cargo and dh-cargo.
